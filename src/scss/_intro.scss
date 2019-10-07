@@ -1,0 +1,188 @@
+.intro {
+    margin-left: calc((100vw - 100%) / 2 * -1);
+    margin-right: calc((100vw - 100%) / 2 * -1);
+    overflow: hidden;
+}
+
+.intro__container {
+    max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
+    margin: 0 auto;
+    padding: 0 var(--content-padding);
+}
+
+.intro__row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.intro__column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &--left {
+        width: 30%;
+        flex-grow: 1;
+        @include breakpoint(mobile) {
+            width: 100%;
+        }
+    }
+    &--right {
+        width: 48rem;
+        flex-shrink: 0;
+        border-left: 2px solid black;
+        @include breakpoint(mobile) {
+            width: 100%;
+            border-left: none;
+        }
+    }
+}
+
+.intro__main-heading {
+    font-size: var(--h1-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+    font-weight: normal;
+    text-transform: uppercase;
+    @include zig-zag();
+    > em {
+        display: inline-block;
+        vertical-align: baseline;
+        position: relative;
+
+        font-style: normal;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0.6rem;
+            bottom: 0.6rem;
+            right: -0.6rem;
+            left: -1.5rem;
+            z-index: -1;
+            border-radius: 1rem;
+            background-color: var(--primary-color);
+        }
+    }
+}
+
+
+
+
+.intro__main-content,
+.intro__login-link {
+    padding: 10rem 0;
+}
+
+.intro__main-content {
+    flex-grow: 1;
+    padding-right: 5rem;
+}
+
+.intro__main-content-image {
+    width: 21.2rem;
+    display: block;
+    margin-bottom: 7rem;
+}
+
+.intro__main-content-btn {
+    margin-top: 7.5rem;
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        background-color: var(--primary-color);
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        transition: all 0.5s;
+    }
+
+    .no-touch &:hover {
+        &::before {
+            transform: scale(25);
+        }
+    }
+}
+
+.intro__login-link {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    position: relative;
+    @include noHighlight();
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: #fff;
+    }
+    &-overlay {
+        position: absolute;
+        transform-origin: center bottom;
+        transform: translateZ(0) scaleY(0);
+        transition: transform 0.3s ease-out;
+        z-index: 10;
+        height: 100%;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        background-color: var(--primary-color);
+        &-text {
+            font-size: var(--h1-size);
+            line-height: var(--h1-line-height);
+            letter-spacing: var(--h1-letter-spacing);
+            text-transform: uppercase;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.2s, transform 0.2s;
+        }
+    }
+
+    &:link,
+    &:visited {
+        color: var(--primary-font-color);
+    }
+
+    .no-touch &:hover &-overlay {
+        transform: translateZ(0) scaleY(1);
+        &-text {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.2s linear 0.2s, transform 0.2s ease-out 0.2s;
+        }
+    }
+}
+
+.intro__login-link-image {
+    width: 26.8rem;
+    height: auto;
+    display: block;
+}
+
+.intro__login-link-text {
+    font-size: var(--medium-font-size);
+    line-height: var(--medium-line-height);
+    letter-spacing: var(--medium-letter-spacing);
+    margin-top: 6rem;
+    text-transform: uppercase;
+}

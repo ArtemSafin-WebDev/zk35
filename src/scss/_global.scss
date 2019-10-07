@@ -7,19 +7,47 @@
 }
 
 :root {
-    --max-container-width: 1380px;
-    --content-padding: 4rem;
-    --primary-color: #FEEA74;
+    // Переменные контейнера
+    --max-container-width: 1480px;
+    --content-padding: 40px;
+
+    // Переменные цвета
+    --primary-color: #feea74;
+
+
+    // Переменные шрифтов
     --primary-font-color: black;
-    --primary-font: 'Roboto', sans-serif;
-    @include breakpoint(laptop) {
-        --content-padding: 2rem;
+    --primary-font: 'Helios Condensed', sans-serif;
+
+    // Переменные размера шрифтов
+    --medium-font-size: 2.4rem;
+    --medium-line-height: 1.16;
+    --medium-letter-spacing: .3rem;
+
+
+
+    --h1-size: 5.5rem;
+    --h1-letter-spacing: 0.7rem;
+    --h1-line-height: 1.45;
+
+
+    @include breakpoint(mobile) {
+        --content-padding: 20px;
     }
 }
 
 html {
     box-sizing: border-box;
     font-size: 62.5%;
+    @include breakpoint(desktop) {
+        font-size: 52%;
+    }
+    @include breakpoint(laptop) {
+        font-size: 46%;
+    }
+    @include breakpoint(small-tablet) {
+        font-size: 38%;
+    }
 }
 
 body {
@@ -89,6 +117,6 @@ img {
 }
 
 ::selection {
-    color: white;
+    color: var(--primary-font-color);
     background-color: var(--primary-color);
 }
