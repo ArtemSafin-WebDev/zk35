@@ -1,6 +1,9 @@
 import detectIt from 'detect-it';
 
 export default function() {
+
+
+    console.log('Detecting touch')
     
     // Определение тач устройств
 

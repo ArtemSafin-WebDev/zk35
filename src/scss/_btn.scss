@@ -3,11 +3,14 @@
     line-height: var(--medium-line-height);
     letter-spacing: var(--medium-letter-spacing);
     text-transform: uppercase;
-    padding: 1.8rem 3.8rem;
+    padding: 1.9rem 3.3rem;
     border: 2px solid black;
     display: inline-block;
     position: relative;
+    text-align: center;
+    user-select: none;
     @include noHighlight();
+    
     &:link,
     &:visited {
         color: var(--primary-font-color);
