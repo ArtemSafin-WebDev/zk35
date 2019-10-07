@@ -152,7 +152,7 @@
         padding-top: 5rem;
         padding-bottom: 5rem;
         display: flex;
-        
+        justify-content: center;
         flex-direction: row;
     }
     &::before {
@@ -240,6 +240,6 @@
     text-transform: uppercase;
     @include breakpoint(mobile) {
         margin-top: 0;
-        
+        width: 50%;
     }
 }
