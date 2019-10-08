@@ -1,5 +1,6 @@
 .info {
     @include breakpoint(mobile) {
+        display: none;
         &::before {
             display: none;
         }

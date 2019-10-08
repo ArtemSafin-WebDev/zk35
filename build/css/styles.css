@@ -827,6 +827,11 @@ img {
   margin-left: calc((100vw - 100%) / 2 * -1);
   margin-right: calc((100vw - 100%) / 2 * -1);
   overflow: hidden; }
+  @media only screen and (max-width: 43.75em) {
+    .intro {
+      margin-bottom: 0; }
+      .intro::after {
+        display: none; } }
 
 .intro__container {
   max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
@@ -933,7 +938,9 @@ img {
       padding-right: 0;
       padding-left: 0;
       padding-top: 5rem;
-      padding-bottom: 11rem; } }
+      padding-bottom: 11rem;
+      display: flex;
+      flex-direction: column; } }
 
 .intro__main-content-image {
   width: 21.2rem;
@@ -948,7 +955,8 @@ img {
   margin-top: 7.5rem; }
   @media only screen and (max-width: 43.75em) {
     .intro__main-content-btn {
-      width: 100%; } }
+      margin-left: 2rem;
+      margin-right: 2rem; } }
   .intro__main-content-btn::before {
     content: '';
     z-index: -1;
@@ -960,8 +968,8 @@ img {
     height: calc(100% + 4px);
     margin-top: calc(1rem + 2px);
     margin-left: calc(1rem + 2px);
-    transition: all 0.5s; }
-  .no-touch .intro__main-content-btn:hover::before {
+    transition: all 0.7s; }
+  .intro__main-content-btn:hover::before {
     transform: scale(25); }
 
 .intro__login-link {
@@ -1060,7 +1068,7 @@ img {
   line-height: var(--medium-line-height);
   letter-spacing: var(--medium-letter-spacing);
   text-transform: uppercase;
-  padding: 1.9rem 3.3rem;
+  padding: 1.9rem 4.8rem;
   border: 2px solid black;
   display: inline-block;
   position: relative;
@@ -1074,8 +1082,10 @@ img {
     color: var(--primary-font-color); }
 
 @media only screen and (max-width: 43.75em) {
-  .info::before {
-    display: none; } }
+  .info {
+    display: none; }
+    .info::before {
+      display: none; } }
 
 .info__row {
   display: flex;
@@ -1119,6 +1129,7 @@ img {
   border-right: 2px solid black; }
   @media only screen and (max-width: 43.75em) {
     .debt {
+      display: none;
       padding: 0;
       padding-bottom: 5rem;
       border: none; } }
