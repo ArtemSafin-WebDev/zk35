@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     const preloader = document.querySelector('.js-preloader');
     if (preloader) {
-        preloader.classList.add('preloader--hidden');
+        setTimeout(function() {
+            preloader.classList.add('preloader--hidden');
+        }, 400);
     }
 })
