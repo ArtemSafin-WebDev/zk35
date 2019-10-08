@@ -8,8 +8,8 @@
 
 :root {
     // Переменные контейнера
-    --max-container-width: 1480px;
-    --content-padding: 40px;
+    --max-container-width: 1920px;
+    --content-padding: 10rem;
 
     // Переменные цвета
     --primary-color: #feea74;
@@ -29,6 +29,10 @@
     --h1-size: 5.5rem;
     --h1-letter-spacing: 0.7rem;
     --h1-line-height: 1.45;
+
+    @include breakpoint(laptop) {
+        --content-padding: 5rem;
+    }
 
 
     @include breakpoint(mobile) {

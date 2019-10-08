@@ -1,6 +1,6 @@
 .info {
     @include breakpoint(mobile) {
-        display: none;
+        
         &::before {
             display: none;
         }
@@ -26,6 +26,10 @@
     @include breakpoint(mobile) {
         width: 100%;
         border: none;
+        margin-bottom: 5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
     &:nth-child(odd) {
         border-left: 2px solid black;
@@ -49,7 +53,7 @@
     padding-top: 8.5rem;
     @include breakpoint(mobile) {
         padding: 0;
-        padding-bottom: 5rem;
+        // padding-bottom: 5rem;
     }
     
 }

@@ -4,7 +4,7 @@
     border-left: 2px solid black;
     border-right: 2px solid black;
     @include breakpoint(mobile) {
-        display: none;
+       
         padding: 0;
         padding-bottom: 5rem;
         border: none;
@@ -123,6 +123,7 @@
     flex-direction: column;
     margin-right: 2.2rem;
     outline: none;
+    @include noHighlight();
     &:last-child {
         margin-right: 0;
     }

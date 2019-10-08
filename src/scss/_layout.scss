@@ -50,6 +50,11 @@
     }
 
     @include breakpoint(mobile) {
+        &::after {
+            display: none !important;
+        }
+
+
         &:last-child {
             &::before {
                 display: none;
