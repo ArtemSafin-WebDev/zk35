@@ -2,7 +2,17 @@
     margin-left: calc((100vw - 100%) / 2 * -1);
     margin-right: calc((100vw - 100%) / 2 * -1);
     overflow: hidden;
-    
+    @include breakpoint(mobile) {
+        &::after {
+            display: block !important;
+        }
+
+        &:last-child {
+            &::after {
+                display: none !important;
+            }
+        }
+    }
 }
 
 .intro__container {
@@ -172,7 +182,7 @@
     @include noHighlight();
     @include breakpoint(mobile) {
         padding-top: 5rem;
-        padding-bottom: 0;
+        padding-bottom: 5rem;
         display: flex;
         justify-content: center;
         flex-direction: row;

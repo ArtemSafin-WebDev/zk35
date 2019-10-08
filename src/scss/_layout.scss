@@ -49,6 +49,17 @@
         }
     }
 
+
+    &:only-child {
+        margin-bottom: 6rem;
+        @include breakpoint(mobile) {
+            margin-bottom: 0;
+        }
+        &::after {
+            display: block;
+        }
+    }
+
     @include breakpoint(mobile) {
         &::after {
             display: none !important;
