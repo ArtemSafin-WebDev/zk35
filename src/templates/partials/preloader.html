@@ -1,0 +1,40 @@
+<div class="preloader js-preloader">
+    <img src="img/logo-small.svg" width="190" alt="Логотип в прелоадере" class="preloader__image">
+</div>
+<style>
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: #FEEA74;
+        transition: transform .4s, opacity .4s, visibility 0s linear .4s;
+        transform-origin: center top;
+        z-index: 10000;
+    }
+    .preloader__image {
+        margin: auto;
+        width: 190px;
+        height: auto;
+    }
+    .preloader--hidden {
+        transform: scaleY(0);
+        visibility: hidden;
+    }
+
+    @media screen and (max-width: 700px) {
+        .preloader__image {
+            width: 100px;
+        }
+    }
+</style>
+<noscript>
+    <style>
+        .preloader {
+            display: none;
+        }
+    </style>
+</noscript>

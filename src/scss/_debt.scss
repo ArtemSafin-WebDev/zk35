@@ -1,0 +1,170 @@
+.debt {
+    padding: 6.5rem;
+    padding-top: 8.5rem;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    @include breakpoint(mobile) {
+        padding: 0;
+        padding-bottom: 5rem;
+        border: none;
+    }
+}
+
+
+.debt__slider {
+    .swiper-container {
+        @include breakpoint(mobile) {
+            overflow: visible;
+        }
+    }
+}
+
+.debt__card {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.debt__card-content {
+    width: 60%;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+    & > p {
+        margin-bottom: 2rem;
+    }
+}
+
+.debt__card-content-wrapper {
+    transform: scale(0);
+    transition: transform 0.5s;
+    @include breakpoint(mobile) {
+        transform: scale(1);
+    }
+    .swiper-slide-active & {
+        transform: scale(1);
+    }
+}
+
+.debt__card-author {
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1.4rem;
+    @include breakpoint(mobile) {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 3rem;
+    }
+}
+
+.debt__card-author-image-container {
+    flex-shrink: 0;
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        display: block;
+        left: 1.4rem;
+        top: 1.4rem;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+    }
+   
+}
+
+.debt__card-author-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+
+    transform: scale(0);
+    transition: transform 0.5s;
+    position: relative;
+    @include breakpoint(mobile) {
+        transform: scale(1);
+    }
+    .swiper-slide-active & {
+        transform: scale(1);
+    }
+}
+
+.debt__card-author-name {
+    font-size: 2.4rem;
+    letter-spacing: 0.3rem;
+    line-height: 1.16;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 4.5rem;
+}
+
+.debt__slider-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 11.5rem;
+    @include breakpoint(mobile) {
+        margin-top: 6rem;
+    }
+}
+
+.debt__slider-button {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2.2rem;
+    outline: none;
+    &:last-child {
+        margin-right: 0;
+    }
+    &--inverted {
+        transform: scaleX(-1);
+    }
+
+
+    .no-touch &:hover,
+    .touch &:active {
+        .icon-arrow-right {
+            transform: translate(0, 0);
+        }
+    }
+}
+
+.debt__slider-button-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .icon-arrow-right-contour {
+        fill: black;
+        width: 6.2rem;
+        height: 4.2rem;
+        transition: fill .2s;
+        .swiper-button-disabled & {
+            fill: #C1C1C1;
+        }
+    }
+    .icon-arrow-right {
+        width: 6.2rem;
+        height: 4.2rem;
+        fill: #FEEA74; 
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        transition: transform .2s, opacity .2s;
+        transform: translate(.7rem, .7rem);
+        .swiper-button-disabled & {
+            opacity: 0;
+        }
+    }
+}

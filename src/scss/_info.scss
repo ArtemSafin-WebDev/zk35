@@ -1,0 +1,54 @@
+.info {
+    @include breakpoint(mobile) {
+        &::before {
+            display: none;
+        }
+    }
+}
+
+
+.info__row {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(mobile) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        
+    }
+}
+
+
+.info__column {
+    width: 50%;
+    
+    border-bottom: 2px solid black;
+    @include breakpoint(mobile) {
+        width: 100%;
+        border: none;
+    }
+    &:nth-child(odd) {
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+        @include breakpoint(mobile) {
+            border: none;
+        }
+    }
+    &:nth-child(even) {
+        border-right: 2px solid black;
+        @include breakpoint(mobile) {
+            border: none;
+        }
+    }
+}
+
+
+.info__article {
+    
+    padding: 6.5rem;
+    padding-top: 8.5rem;
+    @include breakpoint(mobile) {
+        padding: 0;
+        padding-bottom: 5rem;
+    }
+    
+}

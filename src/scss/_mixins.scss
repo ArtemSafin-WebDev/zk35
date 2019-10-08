@@ -73,7 +73,7 @@
 
 @mixin breakpoint($class) {
     @if $class == large-desktop {
-        @media only screen and (max-width: (1600 / 16) * 1em) {
+        @media only screen and (max-width: (1920 / 16) * 1em) {
             @content;
         }
     } @else if $class == desktop {

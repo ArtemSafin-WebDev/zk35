@@ -8,6 +8,17 @@
     max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
     margin: 0 auto;
     padding: 0 var(--content-padding);
+    @include breakpoint(large-desktop) {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    @include breakpoint(mobile) {
+        max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
+        margin: 0 auto;
+        padding: 0 var(--content-padding);
+    }
 }
 
 .intro__row {
@@ -65,7 +76,6 @@
         display: inline-block;
         vertical-align: baseline;
         position: relative;
-
         font-style: normal;
         &::before {
             content: '';
@@ -85,20 +95,22 @@
     }
 }
 
-
-
-
 .intro__main-content,
 .intro__login-link {
     padding: 10rem 0;
-    
 }
 
 .intro__main-content {
     flex-grow: 1;
     padding-right: 5rem;
+    @include breakpoint(large-desktop) {
+        padding-right: 10rem;
+        padding-left: 10rem;
+    }
+    
     @include breakpoint(mobile) {
         padding-right: 0;
+        padding-left: 0;
         padding-top: 5rem;
         padding-bottom: 11rem;
     }
@@ -115,8 +127,8 @@
 }
 
 .intro__main-content-btn {
-    
     margin-top: 7.5rem;
+    
     @include breakpoint(mobile) {
         width: 100%;
     }
